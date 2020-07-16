@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +44,14 @@ namespace KALKULATOR
                     b = a - float.Parse(textBox1.Text);
                     textBox1.Text = b.ToString();
                     break;
-               
+                case 3:
+                    b = Math.Pow( a , float.Parse(textBox1.Text));
+                    textBox1.Text = b.ToString();
+                    break;
+                case 4:
+                    b = Math.Sqrt(float.Parse(textBox1.Text));
+                    textBox1.Text = b.ToString();
+                    break;
                 default:
                     break;
             }
@@ -144,13 +151,25 @@ namespace KALKULATOR
 
         private void Button15_Click(object sender, EventArgs e)
         {
-           
+            a = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            count = 3;
+            label1.Text = a.ToString() + "^";
+            znak = true;
         }
 
         private void Button16_Click(object sender, EventArgs e)
         {
     
-           
+            textBox1.Clear();
+            count = 4;
+            label1.Text = "√" ;
+            znak = true;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Button9_Click(object sender, EventArgs e)
